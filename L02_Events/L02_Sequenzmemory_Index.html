@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+
+<body id="input">
+    <h1>sequence memory</h1>
+    <div id="blueCover">
+        <p id="won">YOU WON!</p>
+        <button id="again">PLAY AGAIN</button>
+    </div>
+    <div id="whiteCover">
+        <p>
+            <span id="currentSeq">Apfel</span>
+            <span id="noBorder">
+            timeout in
+            <span id="timeout"></span>
+            s
+            </span>
+        </p>
+        <aside>
+            <p id="help">Help: Press the key with the character you want to be shown</p>
+            <img id="smiley" src="smiley_good.png" title="feedback">
+        </aside>
+        <div id="cardbox">
+            <!---->
+            <span id="card">A</span>
+            <span id="card">C</span>
+            <span id="card">K</span>
+        </div>
+    </div>
+        <div id="main">
+            <label for="timeout">
+                enter timeout
+                <input type="number" placeholder="min" id="timeoutMin">
+                <input type="number" placeholder="sec" id="timeoutSec">
+                <br>
+            </label>
+            <label>
+                how long do you need to look at the sequence to memorize it?
+                <input type="number" placeholder="min" id="showshuffledMin">
+                <input type="number" placeholder="sec" id="showshuffledSec">
+                <br>
+            </label>
+            <label>
+                enter sequence
+                <input type="text" placeholder="enter sequence" id="sequence">
+            </label>
+            <div id="chooseSequence">
+                <p id="choose">or choose one!</p>
+                <span>Apfel</span>
+                <span>Käse</span>
+                <span>Desoxyribonukleinsäure</span>
+                <br>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span class="small">Wurst</span>
+                <br>
+                <span>.</span>
+                <span class="small">.</span>
+                <span>.</span>
+                <br>
+                <br>
+            </div>
+            <br>
+            <button id="start">START</button>
+    </div>
 </body>
+
 </html>
