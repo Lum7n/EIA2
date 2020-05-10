@@ -11,7 +11,7 @@ section {
     padding: 0.5em;
 }
 
-#checkout {
+#getWhite {
     font-size: 1em;
     padding: 0.3em 0.5em;
 }
@@ -200,8 +200,23 @@ th, td {
 }
 
 [value=Böden], #checkboxGr1 {
-    background-color: #ffbebe;
-    padding: 0.2em 0em 0em 0em;
+    background-color: #dafab0;
+    padding: 0.2em 0em 0.1em 0em;
+}
+
+[value=Fenster], #checkboxGr2 {
+    background-color: #fde0be;
+    padding: 0.1em 0em 0.1em 0em;
+}
+
+[value=Beete], #checkboxGr3 {
+    background-color: #d7ccfd;
+    padding: 0.05em 0em 0.1em 0em;
+}
+
+[value=Rasen], #checkboxGr4 {
+    background-color: #fdcce7;
+    padding: 0.05em 0em 0.15em 0em;
 }
 
 #tableH {
@@ -233,4 +248,10 @@ textarea {
 
 #tableA {
     margin: 1.5em 0em 1em 0em;
+}
+
+/*              whiteCover              */
+
+#whiteCover {
+    display: none;
 }

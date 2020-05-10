@@ -12,209 +12,223 @@
 
 <body>
     <h1>WeWork4U</h1>
-    <label class="fas fa-plus-circle">
-        <button>Einkaufen gehen</button>
-    </label>
-    <label class="fas fa-plus-circle">
-        <button>Geld abheben</button>
-    </label>
-    <label class="fas fa-plus-circle">
-        <button>Haushaltsarbeiten</button>
-    </label>
-    <label class="fas fa-plus-circle">
-        <button>etwas anderes</button>
-    </label>
+    <main id="main">
+        <div>
+            <label class="fas fa-plus-circle">
+                <button>Einkaufen gehen</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>Geld abheben</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>Haushaltsarbeiten</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>etwas anderes</button>
+            </label>
+        </div>
+        <form action="">
+            <section>
+                <div id="Einkaufen">
 
-    <main>
-        <section>
-            <div id="Einkaufen">
+                    <input type="text" name="eArtikel" list="eOptionsA" placeholder="Artikel" />
+                    <datalist id="eOptionsA">
+                        <option value="Butter"> </option>
+                        <option value="Milch"> </option>
+                        <option value="Mehl"> </option>
+                        <option value="Zucker"> </option>
+                        <option value="Eier"> </option>
+                        <option value="Salz"> </option>
+                        <option value="Brot"> </option>
+                    </datalist>
 
-                <input type="text" name="eArtikel" list="eOptionsA" placeholder="Artikel" />
-                <datalist id="eOptionsA">
-                    <option value="Butter"> </option>
-                    <option value="Milch"> </option>
-                    <option value="Mehl"> </option>
-                    <option value="Zucker"> </option>
-                    <option value="Eier"> </option>
-                    <option value="Salz"> </option>
-                    <option value="Brot"> </option>
-                </datalist>
+                    <input type="number" name="eStepper" step="1" min="1" max="25" value="1" />
 
-                <input type="number" name="eStepper" step="1" min="1" max="25" value="1" />
-
-                <span class="Group radioE">
-                    <input type="radio" name="eRadio" value="eR1" id="eR1" />
-                    <label for="eR1">kg</label>
-                    </br>
-                    <input type="radio" name="eRadio" value="eR2" id="eR2" />
-                    <label for="eR2">g</label>
-                    </br>
-                    <input type="radio" name="eRadio" value="eR3" id="eR3" />
-                    <label for="eR3">Stück</label>
-                    </br>
-                    <input type="radio" name="eRadio" value="eR4" id="eR4" />
-                    <label for="eR4">sixpack</label>
-                </span>
-
-                <input type="text" name="eLaden" list="eOptionsL" placeholder="Laden" />
-                <datalist id="eOptionsL">
-                    <option value="Aldi"> </option>
-                    <option value="Netto"> </option>
-                    <option value="Lidl"> </option>
-                    <option value="Rewe"> </option>
-                    <option value="Edeka"> </option>
-                    <option value="Bäcker"> </option>
-                    <option value="Metzger"> </option>
-                </datalist>
-
-                <span id="ArtikelPreis"> 200.50 €</span>
-
-                <a class="far fa-check-circle"></a>
-            </div>
-            <div id="tableE">
-                <table>
-                    <tr>
-                        <th id="Artikel">Artikel</th>
-                        <th id="Menge">Menge</th>
-                        <th id="Einheit">Einheit</th>
-                        <th id="Laden">Laden</th>
-                        <th id="Preis">Preis</th>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <section>
-            <div id="Bank">
-
-                <span id="Slider">
-                    5 €
-                    <input type="range" name="Slider" min="5" max="200" step="5" value="5" />
-                    200 €
-                </span>
-
-                <output id="BankBetrag" name="out"> 5€ </output>
-
-                <a class="far fa-check-circle"></a>
-
-            </div>
-        </section>
-        <section>
-            <div id="Haushalt">
-
-                <select name="Select">
-                    <optgroup label="Haus"></optgroup>
-                    <option value="Böden">Böden</option>
-                    <option value="Fenster">Fenster</option>
-                    <optgroup label="Garten"></optgroup>
-                    <option value="Beete">Beete</option>
-                    <option value="Rasen">Rasen</option>
-                </select>
-
-                <input type="number" name="hStepper" step="1" min="1" max="20" value="1" />
-
-                <span class="Group radioH">
-                    <input type="radio" name="hRadio" value="hR1" id="hR1" />
-                    <label for="hR1">Zimmer, Fenster, Beete</label>
-                    </br>
-                    <input type="radio" name="hRadio" value="hR2" id="hR2" />
-                    <label for="hR2">qm</label>
-                </span>
-
-                <span class="Group checkbox">
-                    <span id="checkboxGr1">
-                        <input type="checkbox" name="Checkbox1" value="kehren" id="check1.1" />
-                        <label for="check1.1">kehren</label>
-                        <input type="checkbox" name="Checkbox2" value="staubsaugen" id="check1.2" />
-                        <label for="check1.2">staubsaugen</label>
-                        <input type="checkbox" name="Checkbox3" value="wischen" id="check1.3" />
-                        <label for="check1.3">wischen</label>
+                    <span class="Group radioE">
+                        <input type="radio" name="eRadio" value="eR1" id="eR1" />
+                        <label for="eR1">kg</label>
                         </br>
+                        <input type="radio" name="eRadio" value="eR2" id="eR2" />
+                        <label for="eR2">g</label>
+                        </br>
+                        <input type="radio" name="eRadio" value="eR3" id="eR3" />
+                        <label for="eR3">Stück</label>
+                        </br>
+                        <input type="radio" name="eRadio" value="eR4" id="eR4" />
+                        <label for="eR4">sixpack</label>
                     </span>
-                    <input type="checkbox" name="Checkbox4" value="putzen" id="check2" />
-                    <label for="check2">putzen</label>
-                    </br>
-                    <input type="checkbox" name="Checkbox5" value="gießen" id="check3.1" />
-                    <label for="check3.1">gießen</label>
-                    <input type="checkbox" name="Checkbox6" value="jähten" id="check3.2" />
-                    <label for="check3.2">säen / ernten</label>
-                    <input type="checkbox" name="Checkbox7" value="säen/ernten" id="check3.3" />
-                    <label for="check3.3">jähten</label>
-                    </br>
-                    <input type="checkbox" name="Checkbox8" value="mähen" id="check4.1" />
-                    <label for="check4.1">mähen</label>
-                    <input type="checkbox" name="Checkbox9" value="gießen" id="check4.2" />
-                    <label for="check4.2">gießen</label>
-                </span>
 
-                <a class="far fa-check-circle"></a>
+                    <input type="text" name="eLaden" list="eOptionsL" placeholder="Laden" />
+                    <datalist id="eOptionsL">
+                        <option value="Aldi"> </option>
+                        <option value="Netto"> </option>
+                        <option value="Lidl"> </option>
+                        <option value="Rewe"> </option>
+                        <option value="Edeka"> </option>
+                        <option value="Bäcker"> </option>
+                        <option value="Metzger"> </option>
+                    </datalist>
 
-            </div>
-            <div id="tableH">
-                <table>
-                    <tr>
-                        <th id="Objekt">Objekt</th>
-                        <th id="Menge">Menge</th>
-                        <th id="Einheit">Einheit</th>
-                        <th id="TätigkeitH">Tätigkeit</th>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <section>
-            <div id="Anderes">
+                    <span id="ArtikelPreis"> 0.50 €</span>
 
-                <input type="text" name="aDatalist" list="aOptions" placeholder="Anderes" />
-                <datalist id="aOptions">
-                    <option value="Post"> </option>
-                    <option value="Medikamente"> </option>
-                    <option value="Lieferungen"> </option>
-                    <option value="mit Hund gehen"> </option>
-                </datalist>
+                    <a class="far fa-check-circle" id="ArtikelIn"></a>
+                </div>
+                <div id="tableE">
+                    <table>
+                        <tr>
+                            <th id="Artikel">Artikel</th>
+                            <th id="Menge">Menge</th>
+                            <th id="Einheit">Einheit</th>
+                            <th id="Laden">Laden</th>
+                            <th id="Preis">Preis</th>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <div id="Bank">
 
-                <span class="Group radioA">
-                    <input type="radio" name="aRadio" value="aR1" id="aR1" />
-                    <label for="aR1">wegbringen</label>
-                    </br>
-                    <input type="radio" name="aRadio" value="aR2" id="aR2" />
-                    <label for="aR2">abholen</label>
-                </span>
+                    <span id="Slider">
+                        5 €
+                        <input type="range" name="Slider" min="5" max="200" step="5" value="5" />
+                        200 €
+                    </span>
 
-                <textarea name="Infos" rows="3" placeholder="Zusatzinformationen"></textarea>
+                    <output id="BankBetrag" name="out"> 5€ </output>
 
-                <a class="far fa-check-circle"></a>
+                    <a class="far fa-check-circle" id="BankIn"></a>
 
-            </div>
-            <div id="tableA">
-                <table>
-                    <tr>
-                        <th id="Sache">Sache</th>
-                        <th id="TätigkeitA">Tätigkeit</th>
-                        <th id="Zusatzinfos">Zusatzinformationen</th>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-        <button id="checkout">Alle Erledigungen + Kontrolle + Kasse</button>
+                </div>
+            </section>
+            <section>
+                <div id="Haushalt">
+
+                    <select name="Select">
+                        <optgroup label="Haus"></optgroup>
+                        <option value="Böden">Böden</option>
+                        <option value="Fenster">Fenster</option>
+                        <optgroup label="Garten"></optgroup>
+                        <option value="Beete">Beete</option>
+                        <option value="Rasen">Rasen</option>
+                    </select>
+
+                    <input type="number" name="hStepper" step="1" min="1" max="20" value="1" />
+
+                    <span class="Group radioH">
+                        <input type="radio" name="hRadio" value="hR1" id="hR1" />
+                        <label for="hR1">Zimmer, Fenster, Beete</label>
+                        </br>
+                        <input type="radio" name="hRadio" value="hR2" id="hR2" />
+                        <label for="hR2">qm</label>
+                    </span>
+
+                    <span class="Group checkbox">
+                        <span id="checkboxGr1">
+                            <input type="checkbox" name="Checkbox1" value="kehren" id="check1.1" />
+                            <label for="check1.1">kehren</label>
+                            <input type="checkbox" name="Checkbox2" value="staubsaugen" id="check1.2" />
+                            <label for="check1.2">staubsaugen</label>
+                            <input type="checkbox" name="Checkbox3" value="wischen" id="check1.3" />
+                            <label for="check1.3">wischen</label>
+                            </br>
+                        </span>
+                        <span id="checkboxGr2">
+                            <input type="checkbox" name="Checkbox4" value="putzen" id="check2" />
+                            <label for="check2">putzen</label>
+                            </br>
+                        </span>
+                        <span id="checkboxGr3">
+                            <input type="checkbox" name="Checkbox5" value="gießen" id="check3.1" />
+                            <label for="check3.1">gießen</label>
+                            <input type="checkbox" name="Checkbox6" value="jähten" id="check3.2" />
+                            <label for="check3.2">säen / ernten</label>
+                            <input type="checkbox" name="Checkbox7" value="säen/ernten" id="check3.3" />
+                            <label for="check3.3">jähten</label>
+                            </br>
+                        </span>
+                        <span id="checkboxGr4">
+                            <input type="checkbox" name="Checkbox8" value="mähen" id="check4.1" />
+                            <label for="check4.1">mähen</label>
+                            <input type="checkbox" name="Checkbox9" value="gießen" id="check4.2" />
+                            <label for="check4.2">gießen</label>
+                        </span>
+                    </span>
+
+                    <a class="far fa-check-circle" id="WorkIn"></a>
+
+                </div>
+                <div id="tableH">
+                    <table>
+                        <tr>
+                            <th id="Objekt">Objekt</th>
+                            <th id="Menge">Menge</th>
+                            <th id="Einheit">Einheit</th>
+                            <th id="TätigkeitH">Tätigkeit</th>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <div id="Anderes">
+
+                    <input type="text" name="aDatalist" list="aOptions" placeholder="Anderes" />
+                    <datalist id="aOptions">
+                        <option value="Post"> </option>
+                        <option value="Medikamente"> </option>
+                        <option value="Lieferungen"> </option>
+                        <option value="mit Hund gehen"> </option>
+                    </datalist>
+
+                    <span class="Group radioA">
+                        <input type="radio" name="aRadio" value="aR1" id="aR1" />
+                        <label for="aR1">wegbringen</label>
+                        </br>
+                        <input type="radio" name="aRadio" value="aR2" id="aR2" />
+                        <label for="aR2">abholen</label>
+                    </span>
+
+                    <textarea name="Infos" rows="3" placeholder="Zusatzinformationen"></textarea>
+
+                    <a class="far fa-check-circle" id="DiffIn"></a>
+
+                </div>
+                <div id="tableA">
+                    <table>
+                        <tr>
+                            <th id="Sache">Sache</th>
+                            <th id="TätigkeitA">Tätigkeit</th>
+                            <th id="Zusatzinfos">Zusatzinformationen</th>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </form>
+        <button id="getWhite">Alle Erledigungen + Kontrolle + Kasse</button>
     </main>
+    <div id="whiteCover">
+        <button id="getMain">zurück</button>
+        <button>Bezahlen</button>
 
+
+    </div>
 </body>
 
 </html>
