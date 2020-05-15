@@ -1,0 +1,262 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    margin: auto;
+    margin-bottom: 0.5em;
+    border: 0.5px solid grey;
+    width: 48em;
+    padding: 0.5em;
+}
+
+#getWhite {
+    font-size: 1em;
+    padding: 0.3em 0.5em;
+}
+
+/*              Auswahl                 */
+
+.fa-plus-circle {
+    color: #68787e;
+    font-size: 1.6em;
+    padding: 0.42em;
+}
+
+.fa-plus-circle:hover {
+    color: #49bdd1;
+}
+
+label button {
+    position: relative;
+    width: 9em;
+    font-size: 0.6em;
+    padding: 0.3em;
+    bottom: 0.3em;
+}
+
+/*              Arbeitsfelder - Allgemein                 */
+
+input {
+    font-size: 1em;
+    padding: 0.1em 0em 0.1em 0.4em;
+}
+
+select {
+    font-size: 1em;
+    padding: 0.1em 0em 0.15em 0.4em;
+    width: 6em;
+    margin-right: 0.25em;
+}
+
+input[type=text] {
+    width: 12em;
+    margin-right: 0.25em;
+}
+
+input[type=number] {
+    width: 2em;
+}
+
+.Group {
+    padding: 0.21em 0em 0.27em 0.2em;
+    border: 0.5px solid grey;
+    margin-right: 0.25em;
+}
+
+span label {
+    padding: 0em 0.5em 0em 0em;
+}
+
+.fa-check-circle {
+    position: relative;
+    top: 0.15em;
+    margin-left: 0.5em;
+    color: #0d630d;
+    font-size: 1.8em;
+}
+
+.fa-check-circle:hover {
+    color: #36af25;
+    background-color: #e2ffbc;
+    border-radius: 1em;
+}
+
+.radioE, .radioH, .radioA {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+/*              Tabellen-Einstellungen                  */
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    border: 0.5px solid grey;
+}
+
+#Sache {
+    width: 12em;
+}
+
+#Laden {
+    width: 16em;
+}
+
+#Artikel, #Objekt {
+    width: 10em;
+}
+
+#Menge, #Preis {
+    min-width: 4em;
+}
+
+#Einheit {
+    min-width: 7em;
+}
+
+#TätigkeitH {
+    width: 18em;
+}
+
+#TätigkeitA {
+    width: 8em;
+    }
+
+#Zusatzinfos {
+    width: 20em;
+}
+
+/*              Arbeitsfelder - Einkaufen                 */
+
+#Einkaufen {
+    position: relative;
+    display: inline;
+    top: -3.5em;
+}
+
+.radioE {
+    top: 3.87em;
+    width: 5.6em;
+    margin-left: 0.25em;
+}
+
+#tableE {
+    margin: 1.5em 0em 1em 0em;
+}
+
+/*              Arbeitsfelder - Bank                       */
+
+#Bank {
+    position: relative;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+#Slider {
+    padding: 0.4em 0.25em 0.3em 0.2em;
+    border: 0.5px solid grey;
+    margin-right: 0.5em;
+}
+
+#BankBetrag {
+    position: relative;
+    display: inline-block;
+    padding: 0.4em 0.2em 0.25em 0.2em;
+    border: 0.5px solid grey;
+    width: 3em;
+}
+
+#log {
+    position: relative;
+    display: inline-block;
+    color: #0d630d;
+    font-weight: bold;
+    padding: 0.4em 0.4em 0.25em 0.2em;
+    margin-left: 1.2em;
+    width: 8em;
+}
+
+/*              Arbeitsfelder - Haushalt                 */
+
+#Haushalt {
+    position: relative;
+    display: inline;
+    top: -3em;
+}
+
+.radioH {
+    top: 1.35em;
+    width: 12.6em;
+    margin-left: 0.25em;
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 19.1em;
+    top: 3.87em;
+}
+
+[value=Böden], #checkboxGr1 {
+    background-color: #dafab0;
+    padding: 0.2em 0em 0.1em 0em;
+}
+
+[value=Fenster], #checkboxGr2 {
+    background-color: #fde0be;
+    padding: 0.1em 0em 0.1em 0em;
+}
+
+[value=Beete], #checkboxGr3 {
+    background-color: #d7ccfd;
+    padding: 0.05em 0em 0.1em 0em;
+}
+
+[value=Rasen], #checkboxGr4 {
+    background-color: #fdcce7;
+    padding: 0.05em 0em 0.15em 0em;
+}
+
+#tableH {
+    margin: 2em 0em 1em 0em;
+}
+
+/*              Arbeitsfelder - Anderes                 */
+
+
+#Anderes {
+    position: relative;
+    display: inline;
+    top: -2em;
+}
+
+.radioA {
+    top: 1.35em;
+    width: 7.4em;
+}
+
+textarea {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    top: 2.85em;
+    padding: 0.22em 0em 0.1em 0.4em;
+
+}
+
+#tableA {
+    margin: 1.5em 0em 1em 0em;
+}
+
+/*              whiteCover              */
+
+#whiteCover {
+    display: none;
+}
