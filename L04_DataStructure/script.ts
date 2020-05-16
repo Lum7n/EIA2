@@ -10,6 +10,7 @@ namespace WeWork4U {
         generateTableH();
         generateTableA();
 
+        generateContent(data);
 
         let lineE: HTMLElement = <HTMLElement>document.getElementById("ArtikelIn");
         lineE.addEventListener("click", createLineE);
@@ -28,7 +29,7 @@ namespace WeWork4U {
         setM.addEventListener("click", setMain);
 
 
-        let slider: HTMLElement = <HTMLElement>document.getElementById("Slider");
+        let slider: HTMLElement = <HTMLElement>document.getElementById("slider");
         slider.addEventListener("input", displayAmount);
         slider.addEventListener("change", getAmount);
 
@@ -109,13 +110,13 @@ namespace WeWork4U {
                     groupRow.appendChild(td3);
                     break;
                 case "hCheckbox":
-
-
-
-
-                    // let td4: HTMLTableDataCellElement = document.createElement("td"); //nein, erstelle Zelle
+                    console.log(item.value);
+                    let td4: HTMLTableDataCellElement = document.createElement("td");
+                    td4.innerHTML = item.value;
+                    groupRow.appendChild(td4);
+                    break;
+                    // let td4: HTMLTableDataCellElement = document.createElement("td"); 
                     // let x: number = 0;
-
                     // if (x == 0) { //schon eine checkbox durch gelaufen
                     //     let td4: HTMLTableDataCellElement = document.createElement("td");
                     //     td4.innerHTML += item.value;
@@ -124,7 +125,7 @@ namespace WeWork4U {
                     // } else {
                     //     td4.innerHTML = td4.innerHTML + ", " + item.value; //ja, + item
                     // }
-                    break;
+                    // break;
                 default:
             }
         }
@@ -154,15 +155,8 @@ namespace WeWork4U {
                     groupRow.appendChild(td2);
                     break;
                 case "aInfos":
-                    let feld: HTMLElement | null = document.getElementById("aIn");
-                    if (feld) {
-                        let f: string;
-                        f += feld.innerHTML;
-                    }
-
-                    console.log(f);
                     // let td3: HTMLTableDataCellElement = document.createElement("td");
-                    // td3.innerHTML += item.value;
+                    // td3.innerHTML += item.defaultValue;
                     // groupRow.appendChild(td3);
                     break;
                 default:
@@ -177,7 +171,7 @@ namespace WeWork4U {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
 
         // amount response
-        if (target.name == "Slider") {
+        if (target.name == "slider") {
             let output: HTMLOutputElement = <HTMLOutputElement>document.querySelector("output#BankBetrag");
             output.value = target.value + " €";
         }
@@ -187,7 +181,7 @@ namespace WeWork4U {
         let changeAmount: HTMLInputElement = <HTMLInputElement>_event.target;
 
         // get amount, push in amountValue
-        if (changeAmount.name == "Slider") {
+        if (changeAmount.name == "slider") {
             amountValue = changeAmount.value;
         }
     }

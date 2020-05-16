@@ -7,6 +7,7 @@ var WeWork4U;
         WeWork4U.generateTableE();
         WeWork4U.generateTableH();
         WeWork4U.generateTableA();
+        WeWork4U.generateContent(WeWork4U.data);
         let lineE = document.getElementById("ArtikelIn");
         lineE.addEventListener("click", createLineE);
         let lineH = document.getElementById("WorkIn");
@@ -17,7 +18,7 @@ var WeWork4U;
         setW.addEventListener("click", setWhite);
         let setM = document.getElementById("getMain");
         setM.addEventListener("click", setMain);
-        let slider = document.getElementById("Slider");
+        let slider = document.getElementById("slider");
         slider.addEventListener("input", displayAmount);
         slider.addEventListener("change", getAmount);
         let lineB = document.getElementById("BankIn");
@@ -86,17 +87,22 @@ var WeWork4U;
                     groupRow.appendChild(td3);
                     break;
                 case "hCheckbox":
-                    // let td4: HTMLTableDataCellElement = document.createElement("td"); //nein, erstelle Zelle
-                    // let x: number = 0;
-                    // if (x == 0) { //schon eine checkbox durch gelaufen
-                    //     let td4: HTMLTableDataCellElement = document.createElement("td");
-                    //     td4.innerHTML += item.value;
-                    //     groupRow.appendChild(td4);
-                    //     x++;
-                    // } else {
-                    //     td4.innerHTML = td4.innerHTML + ", " + item.value; //ja, + item
-                    // }
+                    console.log(item.value);
+                    let td4 = document.createElement("td");
+                    td4.innerHTML = item.value;
+                    groupRow.appendChild(td4);
                     break;
+                // let td4: HTMLTableDataCellElement = document.createElement("td"); 
+                // let x: number = 0;
+                // if (x == 0) { //schon eine checkbox durch gelaufen
+                //     let td4: HTMLTableDataCellElement = document.createElement("td");
+                //     td4.innerHTML += item.value;
+                //     groupRow.appendChild(td4);
+                //     x++;
+                // } else {
+                //     td4.innerHTML = td4.innerHTML + ", " + item.value; //ja, + item
+                // }
+                // break;
                 default:
             }
         }
@@ -121,14 +127,8 @@ var WeWork4U;
                     groupRow.appendChild(td2);
                     break;
                 case "aInfos":
-                    let feld = document.getElementById("aIn");
-                    if (feld) {
-                        let f;
-                        f += feld.innerHTML;
-                    }
-                    console.log(f);
                     // let td3: HTMLTableDataCellElement = document.createElement("td");
-                    // td3.innerHTML += item.value;
+                    // td3.innerHTML += item.defaultValue;
                     // groupRow.appendChild(td3);
                     break;
                 default:
@@ -139,7 +139,7 @@ var WeWork4U;
     function displayAmount(_event) {
         let target = _event.target;
         // amount response
-        if (target.name == "Slider") {
+        if (target.name == "slider") {
             let output = document.querySelector("output#BankBetrag");
             output.value = target.value + " €";
         }
@@ -147,7 +147,7 @@ var WeWork4U;
     function getAmount(_event) {
         let changeAmount = _event.target;
         // get amount, push in amountValue
-        if (changeAmount.name == "Slider") {
+        if (changeAmount.name == "slider") {
             amountValue = changeAmount.value;
         }
     }

@@ -158,7 +158,7 @@ th, td {
     margin-bottom: 1em;
 }
 
-#Slider {
+#sliderOutside {
     padding: 0.4em 0.25em 0.3em 0.2em;
     border: 0.5px solid grey;
     margin-right: 0.5em;
@@ -204,22 +204,22 @@ th, td {
     top: 3.87em;
 }
 
-[value=Böden], #checkboxGr1 {
+[value=Böden], #checkGr1 {
     background-color: #dafab0;
     padding: 0.2em 0em 0.1em 0em;
 }
 
-[value=Fenster], #checkboxGr2 {
+[value=Fenster], #checkGr2 {
     background-color: #fde0be;
     padding: 0.1em 0em 0.1em 0em;
 }
 
-[value=Beete], #checkboxGr3 {
+[value=Beete], #checkGr3 {
     background-color: #d7ccfd;
     padding: 0.05em 0em 0.1em 0em;
 }
 
-[value=Rasen], #checkboxGr4 {
+[value=Rasen], #checkGr4 {
     background-color: #fdcce7;
     padding: 0.05em 0em 0.15em 0em;
 }
