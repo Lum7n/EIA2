@@ -61,7 +61,8 @@
         ],
         "aRadio": [
             { "title": "wegbringen", "type": "radio", "price": 0, "id": "aR1" },
-            { "title": "abholen", "type": "radio", "price": 0, "id": "aR2" }
+            { "title": "abholen", "type": "radio", "price": 0, "id": "aR2" },
+            { "title": "Infos-Hund", "type": "radio", "price": 0, "id": "aR3" }
         ]
 
     }

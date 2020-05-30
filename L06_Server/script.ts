@@ -14,8 +14,6 @@ namespace WeWork4U_4 {
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
 
-     //   form = <HTMLFormElement>document.querySelector("form");
-
         //get submit und reset button
         let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#submit");
         let reset: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button[type=reset]");
@@ -38,11 +36,11 @@ namespace WeWork4U_4 {
         lineA.addEventListener("click", createLineA);
 
 
-        let setW: HTMLElement = <HTMLElement>document.getElementById("getWhite");
-        setW.addEventListener("click", setWhite);
+        // let setW: HTMLElement = <HTMLElement>document.getElementById("getWhite");
+        // setW.addEventListener("click", setWhite);
 
-        let setM: HTMLElement = <HTMLElement>document.getElementById("getMain");
-        setM.addEventListener("click", setMain);
+        // let setM: HTMLElement = <HTMLElement>document.getElementById("getMain");
+        // setM.addEventListener("click", setMain);
 
 
         let slider: HTMLElement = <HTMLElement>document.getElementById("slider");
@@ -64,9 +62,15 @@ namespace WeWork4U_4 {
 
     function resetOrder(_event: Event): void {
         tableE.innerHTML = "";
+        generateTableE();
+
         amount.innerHTML = "";
+
         tableH.innerHTML = "";
+        generateTableH();
+
         tableA.innerHTML = "";
+        generateTableA();
     }
 
     // create Table-Rows
@@ -94,10 +98,14 @@ namespace WeWork4U_4 {
                     groupRow.appendChild(td2);
                     break;
                 case "eStepper":
-                    let td3: HTMLTableDataCellElement = document.createElement("td");
-                    td3.innerHTML += item.value;
-                    groupRow.appendChild(td3);
-                    break;
+                    let info: HTMLInputElement = <HTMLInputElement>document.querySelector("input#eStepperID");
+                    let text: string | null = info.value;
+                    if (text) {
+                        let td3: HTMLTableDataCellElement = document.createElement("td");
+                        td3.innerHTML += text;
+                        groupRow.appendChild(td3);
+                        break;
+                    }
                 case "eRadio":
                     let td4: HTMLTableDataCellElement = document.createElement("td");
                     td4.innerHTML += item.value;
@@ -132,10 +140,14 @@ namespace WeWork4U_4 {
                     groupRow.appendChild(td1);
                     break;
                 case "hStepper":
-                    let td2: HTMLTableDataCellElement = document.createElement("td");
-                    td2.innerHTML += item.value;
-                    groupRow.appendChild(td2);
-                    break;
+                    let info: HTMLInputElement = <HTMLInputElement>document.querySelector("input#hStepperID");
+                    let text: string | null = info.value;
+                    if (text) {
+                        let td2: HTMLTableDataCellElement = document.createElement("td");
+                        td2.innerHTML += text;
+                        groupRow.appendChild(td2);
+                        break;
+                    }
                 case "hRadio":
                     let td3: HTMLTableDataCellElement = document.createElement("td");
                     td3.innerHTML = item.value;
@@ -147,17 +159,17 @@ namespace WeWork4U_4 {
                     td4.innerHTML = item.value;
                     groupRow.appendChild(td4);
                     break;
-                    // let td4: HTMLTableDataCellElement = document.createElement("td"); 
-                    // let x: number = 0;
-                    // if (x == 0) { //schon eine checkbox durch gelaufen
-                    //     let td4: HTMLTableDataCellElement = document.createElement("td");
-                    //     td4.innerHTML += item.value;
-                    //     groupRow.appendChild(td4);
-                    //     x++;
-                    // } else {
-                    //     td4.innerHTML = td4.innerHTML + ", " + item.value; //ja, + item
-                    // }
-                    // break;
+                // let td4: HTMLTableDataCellElement = document.createElement("td"); 
+                // let x: number = 0;
+                // if (x == 0) { //schon eine checkbox durch gelaufen
+                //     let td4: HTMLTableDataCellElement = document.createElement("td");
+                //     td4.innerHTML += item.value;
+                //     groupRow.appendChild(td4);
+                //     x++;
+                // } else {
+                //     td4.innerHTML = td4.innerHTML + ", " + item.value; //ja, + item
+                // }
+                // break;
                 default:
             }
         }
@@ -187,12 +199,18 @@ namespace WeWork4U_4 {
                     groupRow.appendChild(td2);
                     break;
                 case "aInfos":
-                    // let td3: HTMLTableDataCellElement = document.createElement("td");
-                    // td3.innerHTML += item.defaultValue;
-                    // groupRow.appendChild(td3);
+                    let info: HTMLInputElement = <HTMLInputElement>document.querySelector("textarea#aIn");
+                    let text: string | null = info.value;
+                    if (text) {
+                        let td3: HTMLTableDataCellElement = document.createElement("td");
+                        td3.innerHTML += text;
+                        groupRow.appendChild(td3);
+                    }
                     break;
                 default:
             }
+
+
         }
 
     }
@@ -226,18 +244,18 @@ namespace WeWork4U_4 {
 
     // checkout-section
 
-    function setWhite(): void {
-        var m: HTMLElement = <HTMLElement>document.getElementById("main");
-        m.style.display = "none";
-        var w: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
-        w.style.display = "contents";
-    }
+    // function setWhite(): void {
+    //     var m: HTMLElement = <HTMLElement>document.getElementById("main");
+    //     m.style.display = "none";
+    //     var w: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
+    //     w.style.display = "contents";
+    // }
 
-    function setMain(): void {
-        var m: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
-        m.style.display = "none";
-        var w: HTMLElement = <HTMLElement>document.getElementById("main");
-        w.style.display = "contents";
-    }
+    // function setMain(): void {
+    //     var m: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
+    //     m.style.display = "none";
+    //     var w: HTMLElement = <HTMLElement>document.getElementById("main");
+    //     w.style.display = "contents";
+    // }
 
 }

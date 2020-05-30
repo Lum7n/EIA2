@@ -10,7 +10,6 @@ var WeWork4U_4;
         let response = await fetch("data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        //   form = <HTMLFormElement>document.querySelector("form");
         //get submit und reset button
         let submit = document.querySelector("#submit");
         let reset = document.querySelector("button[type=reset]");
@@ -26,10 +25,10 @@ var WeWork4U_4;
         lineH.addEventListener("click", createLineH);
         let lineA = document.getElementById("DiffIn");
         lineA.addEventListener("click", createLineA);
-        let setW = document.getElementById("getWhite");
-        setW.addEventListener("click", setWhite);
-        let setM = document.getElementById("getMain");
-        setM.addEventListener("click", setMain);
+        // let setW: HTMLElement = <HTMLElement>document.getElementById("getWhite");
+        // setW.addEventListener("click", setWhite);
+        // let setM: HTMLElement = <HTMLElement>document.getElementById("getMain");
+        // setM.addEventListener("click", setMain);
         let slider = document.getElementById("slider");
         slider.addEventListener("input", displayAmount);
         slider.addEventListener("change", getAmount);
@@ -46,9 +45,12 @@ var WeWork4U_4;
     }
     function resetOrder(_event) {
         WeWork4U_4.tableE.innerHTML = "";
+        WeWork4U_4.generateTableE();
         amount.innerHTML = "";
         WeWork4U_4.tableH.innerHTML = "";
+        WeWork4U_4.generateTableH();
         WeWork4U_4.tableA.innerHTML = "";
+        WeWork4U_4.generateTableA();
     }
     // create Table-Rows
     function createLineE() {
@@ -70,10 +72,14 @@ var WeWork4U_4;
                     groupRow.appendChild(td2);
                     break;
                 case "eStepper":
-                    let td3 = document.createElement("td");
-                    td3.innerHTML += item.value;
-                    groupRow.appendChild(td3);
-                    break;
+                    let info = document.querySelector("input#eStepperID");
+                    let text = info.value;
+                    if (text) {
+                        let td3 = document.createElement("td");
+                        td3.innerHTML += text;
+                        groupRow.appendChild(td3);
+                        break;
+                    }
                 case "eRadio":
                     let td4 = document.createElement("td");
                     td4.innerHTML += item.value;
@@ -103,10 +109,14 @@ var WeWork4U_4;
                     groupRow.appendChild(td1);
                     break;
                 case "hStepper":
-                    let td2 = document.createElement("td");
-                    td2.innerHTML += item.value;
-                    groupRow.appendChild(td2);
-                    break;
+                    let info = document.querySelector("input#hStepperID");
+                    let text = info.value;
+                    if (text) {
+                        let td2 = document.createElement("td");
+                        td2.innerHTML += text;
+                        groupRow.appendChild(td2);
+                        break;
+                    }
                 case "hRadio":
                     let td3 = document.createElement("td");
                     td3.innerHTML = item.value;
@@ -153,9 +163,13 @@ var WeWork4U_4;
                     groupRow.appendChild(td2);
                     break;
                 case "aInfos":
-                    // let td3: HTMLTableDataCellElement = document.createElement("td");
-                    // td3.innerHTML += item.defaultValue;
-                    // groupRow.appendChild(td3);
+                    let info = document.querySelector("textarea#aIn");
+                    let text = info.value;
+                    if (text) {
+                        let td3 = document.createElement("td");
+                        td3.innerHTML += text;
+                        groupRow.appendChild(td3);
+                    }
                     break;
                 default:
             }
@@ -183,17 +197,17 @@ var WeWork4U_4;
         amount.innerHTML = amountValue + " € eingeloggt";
     }
     // checkout-section
-    function setWhite() {
-        var m = document.getElementById("main");
-        m.style.display = "none";
-        var w = document.getElementById("whiteCover");
-        w.style.display = "contents";
-    }
-    function setMain() {
-        var m = document.getElementById("whiteCover");
-        m.style.display = "none";
-        var w = document.getElementById("main");
-        w.style.display = "contents";
-    }
+    // function setWhite(): void {
+    //     var m: HTMLElement = <HTMLElement>document.getElementById("main");
+    //     m.style.display = "none";
+    //     var w: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
+    //     w.style.display = "contents";
+    // }
+    // function setMain(): void {
+    //     var m: HTMLElement = <HTMLElement>document.getElementById("whiteCover");
+    //     m.style.display = "none";
+    //     var w: HTMLElement = <HTMLElement>document.getElementById("main");
+    //     w.style.display = "contents";
+    // }
 })(WeWork4U_4 || (WeWork4U_4 = {}));
 //# sourceMappingURL=script.js.map

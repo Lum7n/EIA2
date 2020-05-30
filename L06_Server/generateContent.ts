@@ -112,6 +112,7 @@ namespace WeWork4U_4 {
             input.min = "1";
             input.max = "25";
             input.value = item.title;
+            input.id = _category + "ID";
 
             group.appendChild(input);
         }
