@@ -2,6 +2,7 @@
 var WeWork4U_4;
 (function (WeWork4U_4) {
     let form;
+    let url = "https://lum7n.herokuapp.com";
     let amountValue;
     let amount;
     window.addEventListener("load", init);
@@ -39,8 +40,9 @@ var WeWork4U_4;
         console.log("send order");
         let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        await fetch("Index.html?" + query.toString());
-        alert("Order Sent!");
+        let response = await fetch(url + "?" + query.toString());
+        let responseText = await response.text();
+        alert(responseText);
     }
     function resetOrder(_event) {
         WeWork4U_4.tableE.innerHTML = "";

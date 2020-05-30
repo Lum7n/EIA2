@@ -1,6 +1,7 @@
 namespace WeWork4U_4 {
 
     let form: HTMLFormElement;
+    let url: string = "https://lum7n.herokuapp.com";
 
     let amountValue: string;
     let amount: HTMLSpanElement;
@@ -56,8 +57,9 @@ namespace WeWork4U_4 {
         console.log("send order");
         let formData: FormData = new FormData(form);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        await fetch("Index.html?" + query.toString());
-        alert("Order Sent!");
+        let response: Response = await fetch(url + "?" + query.toString());
+        let responseText: string = await response.text();
+        alert(responseText);
     }
 
     function resetOrder(_event: Event): void {
