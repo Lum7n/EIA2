@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWork4U</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="generateContent.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="generateTables.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>WeWork4U</h1>
+    <main id="main">
+        <div>
+            <label class="fas fa-plus-circle">
+                <button>Einkaufen gehen</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>Geld abheben</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>Haushaltsarbeiten</button>
+            </label>
+            <label class="fas fa-plus-circle">
+                <button>etwas anderes</button>
+            </label>
+        </div>
+        <form id="form" method="GET" action="">
+            <section>
+                <div id="Einkaufen">
+
+                    <span id="eArtikel">
+                    </span>
+
+                    <span id="eStepper">
+                    </span>
+
+                    <span id="eRadio" class="Group radioE">
+                    </span>
+
+                    <span id="eLaden"> 
+                    </span>
+
+                    <a class="far fa-check-circle" id="ArtikelIn"></a>
+                
+                </div>
+                <div id="tableE">
+
+                </div>
+            </section>
+            <section>
+                <div id="Bank">
+
+                    <span id="sliderOutside">
+                        5 €
+                        <span id="slider">
+                            <input type="range" name="slider" min="5" max="200" step="5" value="0" />
+                        </span>
+                        200 €
+                    </span>
+
+                    <output id="BankBetrag"> 5€ </output>
+
+                    <a class="far fa-check-circle" id="BankIn"></a>
+
+                    <span id="log"></span>
+
+                </div>
+            </section>
+            <section>
+                <div id="Haushalt">
+
+                    <span id="hSelect">
+                    </span>
+
+                    <span id="hStepper">
+                    </span>
+
+                    <span id="hRadio" class="Group radioH">
+                    </span>
+
+                    <span id="hCheckbox" class="Group checkbox">
+                    </span>
+
+                    <a class="far fa-check-circle" id="WorkIn"></a>
+
+                </div>
+                <div id="tableH">
+
+                </div>
+            </section>
+            <section>
+                <div id="Anderes">
+
+                    <span id="aDatalist">
+                    </span>
+
+                    <span id="aRadio" class="Group radioA">
+                    </span>
+
+                    <textarea id="aIn" name="aInfos" rows="3" placeholder="Zusatzinformationen"></textarea>
+
+                    <a class="far fa-check-circle" id="DiffIn"></a>
+
+                </div>
+                <div id="tableA">
+                    
+                </div>
+            </section>
+        </form>
+        <!-- <button id="getWhite">Alle Erledigungen + Kontrolle + Kasse</button> -->
+        <button type="button" form="form" id="submit">SUBMIT</button>
+        <button type="reset" form="form">RESET</button>
+    </main>
+    <div id="whiteCover">
+        <button id="getMain">zurück</button>
+        <button>Bezahlen</button>
+
+
+    </div>
+</body>
+
+</html>
