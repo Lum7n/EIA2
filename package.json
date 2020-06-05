@@ -1,7 +1,7 @@
 {
   "name": "eia2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "start": "node L07_Database/server.js"
   },
