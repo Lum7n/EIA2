@@ -61,7 +61,6 @@ export namespace WeWork4U_5 {
             storeTask(url.query);
         }
 
-        _response.write(jsonString);
 
         _response.end();
     }

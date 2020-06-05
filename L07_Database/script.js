@@ -1,8 +1,8 @@
 "use strict";
 var WeWork4U_5;
 (function (WeWork4U_5) {
-    // let url: string = "https://lum7n.herokuapp.com";
-    let url = "http://localhost:5001";
+    let url = "https://lum7n.herokuapp.com";
+    // let url: string = "http://localhost:5001";
     let amountValue;
     let amount;
     window.addEventListener("load", init);

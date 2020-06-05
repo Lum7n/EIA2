@@ -43,7 +43,6 @@ var WeWork4U_5;
             _response.write(jsonString);
             storeTask(url.query);
         }
-        _response.write(jsonString);
         _response.end();
     }
     function storeTask(_task) {

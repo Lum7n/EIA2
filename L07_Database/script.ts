@@ -1,7 +1,7 @@
 namespace WeWork4U_5 {
 
-    // let url: string = "https://lum7n.herokuapp.com";
-    let url: string = "http://localhost:5001";
+    let url: string = "https://lum7n.herokuapp.com";
+    // let url: string = "http://localhost:5001";
 
     let amountValue: string;
     let amount: HTMLSpanElement;
