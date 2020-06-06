@@ -40,7 +40,7 @@ var WeWork4U_5;
             //     console.log(key + " : " + url.query[key]);
             //     _response.write(key + " : " + url.query[key] + "<br/>");
             // }
-            if (_request.url == "/?getTasks") {
+            if (_request.url == "/?getTasks=yes") {
                 let options = { useNewUrlParser: true, useUnifiedTopology: true };
                 let mongoClient = new Mongo.MongoClient(databaseURL, options);
                 await mongoClient.connect();

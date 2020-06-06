@@ -57,7 +57,7 @@ export namespace WeWork4U_5 {
             //     _response.write(key + " : " + url.query[key] + "<br/>");
             // }
 
-            if (_request.url == "/?getTasks") {
+            if (_request.url == "/?getTasks=yes") {
                 let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
                 let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(databaseURL, options);
                 await mongoClient.connect();

@@ -1,7 +1,7 @@
 namespace WeWork4U_5 {
 
-    let url: string = "https://lum7n.herokuapp.com";
-    // let url: string = "http://localhost:5001";
+    // let url: string = "https://lum7n.herokuapp.com";
+    let url: string = "http://localhost:5001";
 
     let amountValue: string;
     let amount: HTMLSpanElement;
@@ -79,9 +79,10 @@ namespace WeWork4U_5 {
         generateTableA();
     }
 
+
     async function showOrderedTasks(_event: Event): Promise<void> {
         let span: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#orderedTasks");
-        let response: Response = await fetch(url + "?" + "getTasks");
+        let response: Response = await fetch(url + "?" + "getTasks=yes");
         span.innerHTML = "";
         let responseText: string = await response.text();
         let reT2: string = responseText.replace(/\\|{|}|"|/g, "");
