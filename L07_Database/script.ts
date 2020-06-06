@@ -20,6 +20,12 @@ namespace WeWork4U_5 {
         submit.addEventListener("click", sendOrder);
         reset.addEventListener("click", resetOrder);
 
+        //get show und hide button
+        let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#show");
+        let hide: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#hide");
+        show.addEventListener("click", showOrderedTasks);
+        hide.addEventListener("click", resetSpan);
+
         generateTableE();
         generateTableH();
         generateTableA();
@@ -71,6 +77,41 @@ namespace WeWork4U_5 {
 
         tableA.innerHTML = "";
         generateTableA();
+    }
+
+    async function showOrderedTasks(_event: Event): Promise<void> {
+        let span: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#orderedTasks");
+        let response: Response = await fetch(url + "?" + "getTasks");
+        span.innerHTML = "";
+        let responseText: string = await response.text();
+        let reT2: string = responseText.replace(/\\|{|}|"|/g, "");
+        console.log(reT2);
+        for (let entry of reT2) {
+            switch (entry) {
+            case("_"):
+            span.innerHTML += "<br>" + "Bestell-ID: " + entry ; 
+            break;
+            case("["):
+            break; 
+            case("]"): 
+            break; 
+            case(","): 
+            span.innerHTML += "<br>"; 
+            break; 
+            case(":"):
+            span.innerHTML += entry + " "; 
+            break; 
+            default:
+            span.innerHTML += "" + entry ; 
+            break; 
+            }
+        }
+        console.log(responseText); 
+    }
+
+    function resetSpan(): void {
+        let span: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#orderedTasks");
+        span.innerHTML = "";
     }
 
     // create Table-Rows

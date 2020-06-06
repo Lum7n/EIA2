@@ -17,7 +17,7 @@
     <main id="main">
 
         <form id="form" method="GET" action="">
-        
+
             <span class="heading">Einkaufen gehen</span>
             <fieldset id="Einkaufen">
                 <div id="eingabeE">
@@ -31,11 +31,11 @@
                     <span id="eRadio" class="Group radioE">
                     </span>
 
-                    <span id="eLaden"> 
+                    <span id="eLaden">
                     </span>
 
                     <a class="far fa-check-circle" id="ArtikelIn"></a>
-                
+
                 </div>
                 <div id="tableE">
 
@@ -86,7 +86,7 @@
 
                 </div>
             </fieldset>
-                
+
             <span class="heading">etwas anderes</span>
             <fieldset id="Anderes">
                 <div id="eingabeA">
@@ -97,19 +97,30 @@
                     <span id="aRadio" class="Group radioA">
                     </span>
 
-                    <textarea id="aIn" name="aInfos" rows="3" placeholder="Rasse, Strecke, ungefähre Größe, ..."></textarea>
+                    <textarea id="aIn" name="aInfos" rows="3"
+                        placeholder="Rasse, Strecke, ungefähre Größe, ..."></textarea>
 
                     <a class="far fa-check-circle" id="DiffIn"></a>
 
                 </div>
                 <div id="tableA">
-                    
+
                 </div>
             </fieldset>
         </form>
         <!-- <button id="getWhite">Alle Erledigungen + Kontrolle + Kasse</button> -->
         <button type="button" form="form" id="submit">SUBMIT</button>
         <button type="reset" form="form">RESET</button>
+        </br>
+        <fieldset>
+            <span class="heading">Bestellungen</span>
+            <fieldset>
+                <button type="button" id="show">anzeigen</button>
+                <button type="button" id="hide">ausblenden</button>
+                </br>
+                <span id="orderedTasks"></span>
+            </fieldset>
+        </fieldset>
     </main>
     <div id="whiteCover">
         <button id="getMain">zurück</button>

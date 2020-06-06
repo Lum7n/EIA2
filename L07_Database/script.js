@@ -15,6 +15,11 @@ var WeWork4U_5;
         let reset = document.querySelector("button[type=reset]");
         submit.addEventListener("click", sendOrder);
         reset.addEventListener("click", resetOrder);
+        //get show und hide button
+        let show = document.querySelector("#show");
+        let hide = document.querySelector("#hide");
+        show.addEventListener("click", showOrderedTasks);
+        hide.addEventListener("click", resetSpan);
         WeWork4U_5.generateTableE();
         WeWork4U_5.generateTableH();
         WeWork4U_5.generateTableA();
@@ -51,6 +56,39 @@ var WeWork4U_5;
         WeWork4U_5.generateTableH();
         WeWork4U_5.tableA.innerHTML = "";
         WeWork4U_5.generateTableA();
+    }
+    async function showOrderedTasks(_event) {
+        let span = document.querySelector("#orderedTasks");
+        let response = await fetch(url + "?" + "getTasks");
+        span.innerHTML = "";
+        let responseText = await response.text();
+        let reT2 = responseText.replace(/\\|{|}|"|/g, "");
+        console.log(reT2);
+        for (let entry of reT2) {
+            switch (entry) {
+                case ("_"):
+                    span.innerHTML += "<br>" + "Bestell-ID: " + entry;
+                    break;
+                case ("["):
+                    break;
+                case ("]"):
+                    break;
+                case (","):
+                    span.innerHTML += "<br>";
+                    break;
+                case (":"):
+                    span.innerHTML += entry + " ";
+                    break;
+                default:
+                    span.innerHTML += "" + entry;
+                    break;
+            }
+        }
+        console.log(responseText);
+    }
+    function resetSpan() {
+        let span = document.querySelector("#orderedTasks");
+        span.innerHTML = "";
     }
     // create Table-Rows
     function createLineE() {

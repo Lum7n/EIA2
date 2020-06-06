@@ -13,7 +13,7 @@ export namespace WeWork4U_5 {
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined)
         port = 5001;
-    
+
     startServer(port);
 
     let databaseURL: string = "mongodb+srv://Lum7n:DatabaseLum7n@eia2-xvgmg.mongodb.net/WeWork4U?retryWrites=true&w=majority";
@@ -30,14 +30,16 @@ export namespace WeWork4U_5 {
     }
 
     async function connectToDatabase(_url: string): Promise<void> {
-        let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
+        let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
-        await mongoClient.connect() ; //da vom Typ Promise = await und async
+        await mongoClient.connect(); //da vom Typ Promise = await und async
         tasks = mongoClient.db("WeWork4U").collection("Tasks");
         console.log("Database connection ", tasks != undefined);
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    let allTasks: string[] = [];
+
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("what's up?");
         // wird ausgegeben wenn im Browser "localhost:5001" eingegeben wird
 
@@ -50,17 +52,29 @@ export namespace WeWork4U_5 {
             // durch "true" wird es zu einem assoziativen Array
             console.log(url.query);
 
-            for (let key in url.query) {
-                console.log(key + " : " + url.query[key]);
-                // _response.write(key + " : " + url.query[key] + "<br/>");
+            // for (let key in url.query) {
+            //     console.log(key + " : " + url.query[key]);
+            //     _response.write(key + " : " + url.query[key] + "<br/>");
+            // }
+
+            if (_request.url == "/?getTasks") {
+                let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(databaseURL, options);
+                await mongoClient.connect();
+                let tasks: Mongo.Collection = mongoClient.db("WeWork4U").collection("Tasks");
+                let mongoCursor: Mongo.Cursor<any> = tasks.find();
+                await mongoCursor.forEach(retrieveOrders); 
+                let jsonString: string = JSON.stringify(allTasks);
+                let answer: string = jsonString.toString();
+                _response.write(answer);
+                allTasks = [];
             }
-
-            let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
-
-            storeTask(url.query);
+            else {
+                let jsonString: string = JSON.stringify(url.query);
+                _response.write(jsonString);
+                storeTask(url.query);
+            }
         }
-
 
         _response.end();
     }
@@ -69,5 +83,11 @@ export namespace WeWork4U_5 {
         tasks.insert(_task);
     }
 
+    function retrieveOrders(_item: object): void {
+        let jsonString: string = JSON.stringify(_item);
+        allTasks.push(jsonString);
+    }
 }
+
+
 

@@ -25,7 +25,8 @@ var WeWork4U_5;
         tasks = mongoClient.db("WeWork4U").collection("Tasks");
         console.log("Database connection ", tasks != undefined);
     }
-    function handleRequest(_request, _response) {
+    let allTasks = [];
+    async function handleRequest(_request, _response) {
         console.log("what's up?");
         // wird ausgegeben wenn im Browser "localhost:5001" eingegeben wird
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -35,18 +36,36 @@ var WeWork4U_5;
             // "parse" verändert das Format der Information
             // durch "true" wird es zu einem assoziativen Array
             console.log(url.query);
-            for (let key in url.query) {
-                console.log(key + " : " + url.query[key]);
-                // _response.write(key + " : " + url.query[key] + "<br/>");
+            // for (let key in url.query) {
+            //     console.log(key + " : " + url.query[key]);
+            //     _response.write(key + " : " + url.query[key] + "<br/>");
+            // }
+            if (_request.url == "/?getTasks") {
+                let options = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient = new Mongo.MongoClient(databaseURL, options);
+                await mongoClient.connect();
+                let tasks = mongoClient.db("WeWork4U").collection("Tasks");
+                let mongoCursor = tasks.find();
+                await mongoCursor.forEach(retrieveOrders);
+                let jsonString = JSON.stringify(allTasks);
+                let answer = jsonString.toString();
+                _response.write(answer);
+                allTasks = [];
             }
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
-            storeTask(url.query);
+            else {
+                let jsonString = JSON.stringify(url.query);
+                _response.write(jsonString);
+                storeTask(url.query);
+            }
         }
         _response.end();
     }
     function storeTask(_task) {
         tasks.insert(_task);
+    }
+    function retrieveOrders(_item) {
+        let jsonString = JSON.stringify(_item);
+        allTasks.push(jsonString);
     }
 })(WeWork4U_5 = exports.WeWork4U_5 || (exports.WeWork4U_5 = {}));
 //# sourceMappingURL=server.js.map
