@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWork4U</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="generateContent.js" type="text/javascript"></script>
+    <script src="generateTables.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>WeWork4U</h1>
+    <main id="main">
+
+        <form id="form" method="GET" action="">
+
+            <span class="heading">Einkaufen gehen</span>
+            <fieldset id="Einkaufen">
+                <div id="eingabeE">
+
+                    <span id="eArtikel">
+                    </span>
+
+                    <span id="eStepper">
+                    </span>
+
+                    <span id="eRadio" class="Group radioE">
+                    </span>
+
+                    <span id="eLaden">
+                    </span>
+
+                    <a class="far fa-check-circle" id="ArtikelIn"></a>
+
+                </div>
+                <div id="tableE">
+
+                </div>
+            </fieldset>
+
+            <span class="heading">Geld abheben</span>
+            <fieldset id="Bank">
+                <div id="eingabeB">
+
+                    <span id="sliderOutside">
+                        5 €
+                        <span id="slider">
+                            <input type="range" name="slider" min="0" max="200" step="5" value="0" />
+                        </span>
+                        200 €
+                    </span>
+
+                    <output id="BankBetrag"> 5€ </output>
+
+                    <a class="far fa-check-circle" id="BankIn"></a>
+
+                    <span id="log"> </span>
+
+                </div>
+            </fieldset>
+
+            <span class="heading">Haushaltsarbeiten</span>
+            <fieldset id="Haushalt">
+                <div id="eingabeH">
+
+                    <span id="hSelect">
+                    </span>
+
+                    <span id="hStepper">
+                    </span>
+
+                    <span id="hRadio" class="Group radioH">
+                    </span>
+
+                    <span id="hCheckbox" class="Group checkbox">
+                    </span>
+
+                    <a class="far fa-check-circle" id="WorkIn"></a>
+
+                </div>
+                <div id="tableH">
+
+                </div>
+            </fieldset>
+
+            <span class="heading">etwas anderes</span>
+            <fieldset id="Anderes">
+                <div id="eingabeA">
+
+                    <span id="aDatalist">
+                    </span>
+
+                    <span id="aRadio" class="Group radioA">
+                    </span>
+
+                    <textarea id="aIn" name="aInfos" rows="3"
+                        placeholder="Rasse, Strecke, ungefähre Größe, ..."></textarea>
+
+                    <a class="far fa-check-circle" id="DiffIn"></a>
+
+                </div>
+                <div id="tableA">
+
+                </div>
+            </fieldset>
+        </form>
+        <!-- <button id="getWhite">Alle Erledigungen + Kontrolle + Kasse</button> -->
+        <button type="button" form="form" id="submit">SUBMIT</button>
+        <button type="reset" form="form">RESET</button>
+        </br>
+        <fieldset>
+            <span class="heading">Bestellungen</span>
+            <fieldset>
+                <button type="button" id="show">anzeigen</button>
+                <button type="button" id="hide">ausblenden</button>
+                </br>
+                <span id="orderedTasks"></span>
+            </fieldset>
+        </fieldset>
+    </main>
+    <div id="whiteCover">
+        <button id="getMain">zurück</button>
+        <button>Bezahlen</button>
+
+
+    </div>
+</body>
+
+</html>
