@@ -5,6 +5,7 @@ namespace WeWork4U_5 {
 
     let amountValue: string;
     let amount: HTMLSpanElement;
+    amount = <HTMLSpanElement>document.querySelector("span#log");
 
     window.addEventListener("load", init);
 
@@ -66,13 +67,12 @@ namespace WeWork4U_5 {
         alert(responseText);
     }
 
-    amount = <HTMLSpanElement>document.querySelector("span#log");
 
     function resetOrder(_event: Event): void {
         tableE.innerHTML = "";
         generateTableE();
 
-        amount.innerHTML = "";
+        amount.innerHTML = " ";
 
         tableH.innerHTML = "";
         generateTableH();
