@@ -48,6 +48,7 @@ var WeWork4U_5;
         let responseText = await response.text();
         alert(responseText);
     }
+    amount = document.querySelector("span#log");
     function resetOrder(_event) {
         WeWork4U_5.tableE.innerHTML = "";
         WeWork4U_5.generateTableE();
@@ -231,7 +232,6 @@ var WeWork4U_5;
     }
     function logAmount(_event) {
         // amount log in
-        amount = document.querySelector("span#log");
         amount.innerHTML = amountValue + " € eingeloggt";
     }
     // checkout-section

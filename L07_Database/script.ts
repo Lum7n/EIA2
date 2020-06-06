@@ -66,6 +66,8 @@ namespace WeWork4U_5 {
         alert(responseText);
     }
 
+    amount = <HTMLSpanElement>document.querySelector("span#log");
+
     function resetOrder(_event: Event): void {
         tableE.innerHTML = "";
         generateTableE();
@@ -280,7 +282,6 @@ namespace WeWork4U_5 {
 
     function logAmount(_event: Event): void {
         // amount log in
-        amount = <HTMLSpanElement>document.querySelector("span#log");
         amount.innerHTML = amountValue + " € eingeloggt";
     }
 
