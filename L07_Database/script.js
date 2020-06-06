@@ -5,7 +5,6 @@ var WeWork4U_5;
     // let url: string = "http://localhost:5001";
     let amountValue;
     let amount;
-    amount = document.querySelector("span#log");
     window.addEventListener("load", init);
     async function init(_event) {
         let response = await fetch("data.json");
@@ -52,7 +51,8 @@ var WeWork4U_5;
     function resetOrder(_event) {
         WeWork4U_5.tableE.innerHTML = "";
         WeWork4U_5.generateTableE();
-        amount.innerHTML = " ";
+        amount = document.querySelector("span#log");
+        amount.innerHTML = "";
         WeWork4U_5.tableH.innerHTML = "";
         WeWork4U_5.generateTableH();
         WeWork4U_5.tableA.innerHTML = "";
@@ -231,7 +231,8 @@ var WeWork4U_5;
         }
     }
     function logAmount(_event) {
-        // amount log in
+        // log amount
+        amount = document.querySelector("span#log");
         amount.innerHTML = amountValue + " € eingeloggt";
     }
     // checkout-section

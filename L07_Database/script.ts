@@ -5,7 +5,7 @@ namespace WeWork4U_5 {
 
     let amountValue: string;
     let amount: HTMLSpanElement;
-    amount = <HTMLSpanElement>document.querySelector("span#log");
+
 
     window.addEventListener("load", init);
 
@@ -72,7 +72,8 @@ namespace WeWork4U_5 {
         tableE.innerHTML = "";
         generateTableE();
 
-        amount.innerHTML = " ";
+        amount = <HTMLSpanElement>document.querySelector("span#log");
+        amount.innerHTML = "";
 
         tableH.innerHTML = "";
         generateTableH();
@@ -281,7 +282,8 @@ namespace WeWork4U_5 {
     }
 
     function logAmount(_event: Event): void {
-        // amount log in
+        // log amount
+        amount = <HTMLSpanElement>document.querySelector("span#log");
         amount.innerHTML = amountValue + " € eingeloggt";
     }
 
