@@ -15,6 +15,14 @@ namespace CanvasVirusus_V3 {
 
         sizeCanvas();
 
+        getBackground();
+
+        createObjects();
+
+        window.setInterval(animate, 20);
+    }
+
+    function getBackground(): void {
         var bgUpLeft: CanvasImageSource = <CanvasImageSource>document.getElementById("bgUpLeft");
         crc2.drawImage(bgUpLeft, 0, 0, 800, 600);
         var bgUpRight: CanvasImageSource = <CanvasImageSource>document.getElementById("bgUpRight");
@@ -23,12 +31,8 @@ namespace CanvasVirusus_V3 {
         crc2.drawImage(bgDownLeft, 0, 600, 800, 600);
         var bgDownRight: CanvasImageSource = <CanvasImageSource>document.getElementById("bgDownRight");
         crc2.drawImage(bgDownRight, 800, 0, 800, 600);
-
+    
         background = crc2.getImageData(0, 0, canvas.width, canvas.height);
-
-        createObjects();
-
-        window.setInterval(animate, 20);
     }
 
 
@@ -104,14 +108,13 @@ namespace CanvasVirusus_V3 {
         colliding();
     }
 
-
     function colliding(): void {
         for (let moveable of moveables) {
             if (moveable instanceof Virus) {
-                let radiusvirus: number = moveable.radius;
-                let positionvirus: Vector = moveable.position;
+                let radiusVirus: number = moveable.radius;
+                let positionVirus: Vector = moveable.position;
 
-                let cellHit: HumanCell | null = getCellHit(positionvirus, radiusvirus);
+                let cellHit: HumanCell | null = getCellHit(positionVirus, radiusVirus);
                 if (cellHit) {
                     cellHit.infected = true;
                 }
@@ -119,9 +122,9 @@ namespace CanvasVirusus_V3 {
         }
     }
 
-    function getCellHit(_positionvirus: Vector, _radiusvirus: number): HumanCell | null {
+    function getCellHit(_positionVirus: Vector, _radiusVirus: number): HumanCell | null {
         for (let moveable of moveables) {
-            if (moveable instanceof HumanCell && moveable.isHit(_positionvirus, _radiusvirus))
+            if (moveable instanceof HumanCell && moveable.isHit(_positionVirus, _radiusVirus))
                 return moveable;
         }
         return null;

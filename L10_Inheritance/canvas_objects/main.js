@@ -8,6 +8,11 @@ var CanvasVirusus_V3;
         CanvasVirusus_V3.canvas = document.querySelector("canvas");
         CanvasVirusus_V3.crc2 = CanvasVirusus_V3.canvas.getContext("2d");
         sizeCanvas();
+        getBackground();
+        createObjects();
+        window.setInterval(animate, 20);
+    }
+    function getBackground() {
         var bgUpLeft = document.getElementById("bgUpLeft");
         CanvasVirusus_V3.crc2.drawImage(bgUpLeft, 0, 0, 800, 600);
         var bgUpRight = document.getElementById("bgUpRight");
@@ -17,8 +22,6 @@ var CanvasVirusus_V3;
         var bgDownRight = document.getElementById("bgDownRight");
         CanvasVirusus_V3.crc2.drawImage(bgDownRight, 800, 0, 800, 600);
         background = CanvasVirusus_V3.crc2.getImageData(0, 0, CanvasVirusus_V3.canvas.width, CanvasVirusus_V3.canvas.height);
-        createObjects();
-        window.setInterval(animate, 20);
     }
     function sizeCanvas() {
         CanvasVirusus_V3.canvas.width = window.innerWidth;
@@ -82,18 +85,18 @@ var CanvasVirusus_V3;
     function colliding() {
         for (let moveable of moveables) {
             if (moveable instanceof CanvasVirusus_V3.Virus) {
-                let radiusvirus = moveable.radius;
-                let positionvirus = moveable.position;
-                let cellHit = getCellHit(positionvirus, radiusvirus);
+                let radiusVirus = moveable.radius;
+                let positionVirus = moveable.position;
+                let cellHit = getCellHit(positionVirus, radiusVirus);
                 if (cellHit) {
                     cellHit.infected = true;
                 }
             }
         }
     }
-    function getCellHit(_positionvirus, _radiusvirus) {
+    function getCellHit(_positionVirus, _radiusVirus) {
         for (let moveable of moveables) {
-            if (moveable instanceof CanvasVirusus_V3.HumanCell && moveable.isHit(_positionvirus, _radiusvirus))
+            if (moveable instanceof CanvasVirusus_V3.HumanCell && moveable.isHit(_positionVirus, _radiusVirus))
                 return moveable;
         }
         return null;
