@@ -27,31 +27,27 @@ var CanvasVirusus_V4;
             CanvasVirusus_V4.crc2.fillStyle = "#b8a1ea";
             CanvasVirusus_V4.crc2.lineWidth = 1;
             CanvasVirusus_V4.crc2.closePath();
+            this.antibody(1, new CanvasVirusus_V4.Vector(10, 0));
+            this.antibody(2, new CanvasVirusus_V4.Vector(20, 40));
+            this.antibody(3, new CanvasVirusus_V4.Vector(-40, -10));
+            this.antibody(4, new CanvasVirusus_V4.Vector(30, 8));
+            this.antibody(11, new CanvasVirusus_V4.Vector(-40, -30));
             CanvasVirusus_V4.crc2.fill();
             CanvasVirusus_V4.crc2.stroke();
-            // Antikörper versuch 
-            // let nAntibodys: number = 6;
-            // let r: number = Math.random() * 10;
-            // console.log(r);
-            // crc2.translate(this.position.x, this.position.y);
-            // crc2.beginPath();
-            // crc2.moveTo(0, 0);
-            // for (let i: number = 0; i < nAntibodys; i++) {
-            //     let x: number = (Math.random() - 0.5);
-            //     let y: number = (Math.random() - 0.5);
-            //     crc2.translate(x + i, y);
-            //     crc2.rotate(r);
-            //     crc2.moveTo(0, 0);
-            //     crc2.lineTo(0, 12);
-            //     crc2.lineTo(0, 0);
-            //     crc2.lineTo(-5, -10);
-            //     crc2.lineTo(0, 0);
-            //     crc2.lineTo(5, -10);
-            //     crc2.lineTo(0, 0);
-            //     crc2.lineWidth = 2;
-            // }
-            // crc2.closePath();
-            // crc2.stroke();
+            CanvasVirusus_V4.crc2.restore();
+        }
+        antibody(_rotation, _translation) {
+            CanvasVirusus_V4.crc2.save();
+            CanvasVirusus_V4.crc2.rotate(_rotation);
+            CanvasVirusus_V4.crc2.translate(_translation.x, _translation.y);
+            CanvasVirusus_V4.crc2.moveTo(0, 0);
+            CanvasVirusus_V4.crc2.lineTo(0, 15);
+            CanvasVirusus_V4.crc2.lineTo(0, 0);
+            CanvasVirusus_V4.crc2.lineTo(-7, -12);
+            CanvasVirusus_V4.crc2.lineTo(0, 0);
+            CanvasVirusus_V4.crc2.lineTo(7, -12);
+            CanvasVirusus_V4.crc2.lineTo(0, 0);
+            CanvasVirusus_V4.crc2.lineWidth = 2;
             CanvasVirusus_V4.crc2.restore();
         }
         move(_timeslice) {
