@@ -7,8 +7,6 @@ namespace CanvasVirusus_V4 {
 
     let moveables: Moveable[] = [];
 
-    let background: ImageData;
-
     function init(_event: Event): void {
         canvas = <HTMLCanvasElement>document.querySelector("canvas");
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
@@ -32,7 +30,6 @@ namespace CanvasVirusus_V4 {
         var bgDownRight: CanvasImageSource = <CanvasImageSource>document.getElementById("bgDownRight");
         crc2.drawImage(bgDownRight, 800, 0, 800, 600);
     
-        background = crc2.getImageData(0, 0, canvas.width, canvas.height);
     }
 
 
@@ -99,7 +96,8 @@ namespace CanvasVirusus_V4 {
     }
 
     function animate(): void {
-        crc2.putImageData(background, 0, 0);
+
+        getBackground();
 
         for (let moveable of moveables) {
             moveable.move(1 / 50);

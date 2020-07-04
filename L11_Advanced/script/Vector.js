@@ -1,6 +1,6 @@
 "use strict";
-var CanvasVirusus_V3;
-(function (CanvasVirusus_V3) {
+var CanvasVirusus_V4;
+(function (CanvasVirusus_V4) {
     class Vector {
         constructor(_x, _y) {
             this.set(_x, _y);
@@ -27,6 +27,6 @@ var CanvasVirusus_V3;
             return new Vector(this.x, this.y);
         }
     }
-    CanvasVirusus_V3.Vector = Vector;
-})(CanvasVirusus_V3 || (CanvasVirusus_V3 = {}));
+    CanvasVirusus_V4.Vector = Vector;
+})(CanvasVirusus_V4 || (CanvasVirusus_V4 = {}));
 //# sourceMappingURL=Vector.js.map
